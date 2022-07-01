@@ -18,8 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-/**jdbc 템플릿 구현
- * NamedParameterJdbcTemplate*/
+/**jdbc 템플릿 구현*/
 @Slf4j
 public class JdbcTemplateRepository implements MemberRepository {
 
@@ -48,11 +47,10 @@ public class JdbcTemplateRepository implements MemberRepository {
         String sql = "update member " +
                 "set username=:username, age=:age " +
                 "where id=:id";
-
         SqlParameterSource param = new MapSqlParameterSource()
                 .addValue("username", updateParam.getUsername())
                 .addValue("age", updateParam.getAge())
-                .addValue("id", memberId); //이 부분이 별도로 필요하다.
+                .addValue("id", memberId);
         template.update(sql, param);
     }
 
@@ -94,7 +92,7 @@ public class JdbcTemplateRepository implements MemberRepository {
     }
 
     private RowMapper<Member> memberRowMapper() {
-        return BeanPropertyRowMapper.newInstance(Member.class); //camel 변환 지원
+        return BeanPropertyRowMapper.newInstance(Member.class);
     }
 
     @Override
