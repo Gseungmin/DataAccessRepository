@@ -1,16 +1,18 @@
 package hello.itemservice.JdbcTemplateTest;
 
 import hello.itemservice.domain.Member;
-import hello.itemservice.repository.jdbctemplate.MemberRepository;
-import hello.itemservice.repository.jdbctemplate.MemberSearchCond;
+import hello.itemservice.repository.MemberRepository;
+import hello.itemservice.repository.MemberSearchCond;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @SpringBootTest
+@Transactional
 class MemberRepositoryTest {
 
     @Autowired
@@ -48,10 +50,5 @@ class MemberRepositoryTest {
         List<Member> result3 = memberRepository.findAll(newMemberSearchCond);
         Assertions.assertThat(result3.size()).isEqualTo(3);
         result3.stream().forEach(member -> System.out.println("member = " + member.getUsername()));
-
-        /**member 초기화*/
-        memberRepository.delete("memberA");
-        memberRepository.delete("memberB");
-        memberRepository.delete("memC");
     }
 }

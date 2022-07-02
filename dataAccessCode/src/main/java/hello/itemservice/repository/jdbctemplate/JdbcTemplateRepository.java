@@ -1,6 +1,9 @@
 package hello.itemservice.repository.jdbctemplate;
 
 import hello.itemservice.domain.Member;
+import hello.itemservice.repository.MemberRepository;
+import hello.itemservice.repository.MemberSearchCond;
+import hello.itemservice.repository.MemberUpdateDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -93,11 +96,5 @@ public class JdbcTemplateRepository implements MemberRepository {
 
     private RowMapper<Member> memberRowMapper() {
         return BeanPropertyRowMapper.newInstance(Member.class);
-    }
-
-    @Override
-    public void delete(String name) {
-        String query = "delete from Member where username = ?";
-        jdbcTemplate.update(query, name);
     }
 }

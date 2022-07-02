@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.itemservice.repository.myBatis.MemberMapper">
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into member (username, age)
+        values (#{username}, #{age})
+    </insert>
+    <update id="update">
+        update member
+        set username=#{updateParam.username},
+            age=#{updateParam.age}
+        where id = #{id}
+    </update>
+    <select id="findById" resultType="Member">
+        select id, username, age
+        from member
+        where id = #{id}
+    </select>
+    <select id="findAll" resultType="Member">
+        select id, username, age
+        from member
+        <where>
+            <if test="username != null and username != ''">
+                and username like concat('%',#{username},'%')
+            </if>
+            <if test="maxAge != null">
+                and age &lt;= #{maxAge}
+            </if>
+        </where>
+    </select>
+</mapper>

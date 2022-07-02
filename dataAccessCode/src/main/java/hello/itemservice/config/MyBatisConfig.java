@@ -1,21 +1,20 @@
 package hello.itemservice.config;
 
 import hello.itemservice.repository.MemberRepository;
-import hello.itemservice.repository.jdbctemplate.JdbcTemplateRepository;
+import hello.itemservice.repository.myBatis.MemberMapper;
+import hello.itemservice.repository.myBatis.MyBatisRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.sql.DataSource;
-
 @Configuration
 @RequiredArgsConstructor
-public class JdbcTemplateConfig {
+public class MyBatisConfig {
 
-    private final DataSource dataSource;
+    private final MemberMapper memberMapper;
 
     @Bean
-    public MemberRepository memberRepository() {
-        return new JdbcTemplateRepository(dataSource);
+    public MemberRepository itemRepository() {
+        return new MyBatisRepository(memberMapper);
     }
 }

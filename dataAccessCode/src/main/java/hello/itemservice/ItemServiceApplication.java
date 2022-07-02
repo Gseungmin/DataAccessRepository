@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Import;
 
 
 @SpringBootApplication
-@Import(JdbcTemplateConfig.class)
+//@Import(JdbcTemplateConfig.class) JdbcTemplate 의존관계 주입
+@Import(MyBatisConfig.class)
 public class ItemServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ItemServiceApplication.class, args);

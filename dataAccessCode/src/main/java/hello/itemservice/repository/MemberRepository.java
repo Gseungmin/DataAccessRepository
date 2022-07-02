@@ -1,4 +1,4 @@
-package hello.itemservice.repository.jdbctemplate;
+package hello.itemservice.repository;
 
 import hello.itemservice.domain.Member;
 
@@ -14,7 +14,5 @@ public interface MemberRepository {
     Optional<Member> findById(Long id);
 
     List<Member> findAll(MemberSearchCond cond);
-
-    void delete(String name);
 
 }
