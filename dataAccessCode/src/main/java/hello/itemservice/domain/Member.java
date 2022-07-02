@@ -2,6 +2,8 @@ package hello.itemservice.domain;
 
 import lombok.Data;
 
+/**
+ * Member Form*/
 @Data
 public class Member {
 

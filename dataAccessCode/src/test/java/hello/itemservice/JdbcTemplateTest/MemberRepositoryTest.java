@@ -19,7 +19,7 @@ class MemberRepositoryTest {
     MemberRepository memberRepository;
 
     @Test
-    void JDBCTemplate테스트() {
+    void RepositoryTest() {
         /**member 저장*/
         Member memberA = new Member("memberA", 26);
         Member memberB = new Member("memberB", 23);

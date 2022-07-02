@@ -2,6 +2,8 @@ package hello.itemservice.repository;
 
 import lombok.Data;
 
+/**
+ * 검색 조건을 위한 Form*/
 @Data
 public class MemberSearchCond {
 

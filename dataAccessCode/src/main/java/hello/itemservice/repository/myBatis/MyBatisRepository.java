@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
+/**MyBatis 구현*/
 public class MyBatisRepository implements MemberRepository {
 
     private final MemberMapper memberMapper;

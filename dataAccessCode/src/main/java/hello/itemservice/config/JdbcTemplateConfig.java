@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
+/**Jdbc Config*/
 @Configuration
 @RequiredArgsConstructor
 public class JdbcTemplateConfig {

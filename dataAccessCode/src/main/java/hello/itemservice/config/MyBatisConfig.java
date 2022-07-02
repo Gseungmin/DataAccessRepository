@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**MyBatis Config*/
 @Configuration
 @RequiredArgsConstructor
 public class MyBatisConfig {
@@ -14,7 +15,7 @@ public class MyBatisConfig {
     private final MemberMapper memberMapper;
 
     @Bean
-    public MemberRepository itemRepository() {
+    public MemberRepository memberRepository() {
         return new MyBatisRepository(memberMapper);
     }
 }

@@ -2,6 +2,8 @@ package hello.itemservice.repository;
 
 import lombok.Data;
 
+/**
+ * Update를 위한 Form*/
 @Data
 public class MemberUpdateDto {
     private String username;

@@ -1,3 +1,4 @@
+-- 임베디드 DB 사용을 위한 기본 테이블 생성
 drop table if exists member CASCADE;
 create table member
 (

@@ -5,6 +5,7 @@ import hello.itemservice.domain.Member;
 import java.util.List;
 import java.util.Optional;
 
+/**Repository interface*/
 public interface MemberRepository {
 
     Member save(Member member);
