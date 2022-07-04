@@ -5,12 +5,10 @@ import hello.itemservice.repository.MemberRepository;
 import hello.itemservice.repository.MemberSearchCond;
 import hello.itemservice.repository.MemberUpdateDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@Repository
 @RequiredArgsConstructor
 /**MyBatis 구현*/
 public class MyBatisRepository implements MemberRepository {

@@ -11,6 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+
+/**
+ * JDBC TEMPLATE
+ * MYBATIS
+ * JPA
+ * Spring Data Jpa
+ * */
 @SpringBootTest
 @Transactional
 class MemberRepositoryTest {

@@ -1,26 +1,26 @@
 package hello.itemservice.config;
 
 import hello.itemservice.repository.MemberRepository;
-import hello.itemservice.repository.myBatis.MemberMapper;
-import hello.itemservice.repository.myBatis.MyBatisRepository;
+import hello.itemservice.repository.jpa.JpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**MyBatis Config*/
+import javax.persistence.EntityManager;
+
 //@Configuration
 @RequiredArgsConstructor
-public class MyBatisConfig {
+public class JpaConfig {
 
-    private final MemberMapper memberMapper;
+    private final EntityManager em;
 
 //    @Bean
-    public MyBatisRepository myBatisRepository() {
-        return new MyBatisRepository(memberMapper);
+    public JpaRepository jpaRepository() {
+        return new JpaRepository(em);
     }
 
 //    @Bean
     public MemberRepository memberRepository() {
-        return myBatisRepository();
+        return jpaRepository();
     }
 }
