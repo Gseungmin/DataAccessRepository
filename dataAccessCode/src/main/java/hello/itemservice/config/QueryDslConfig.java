@@ -1,25 +1,28 @@
 package hello.itemservice.config;
 
 import hello.itemservice.repository.MemberRepository;
+import hello.itemservice.repository.querydsl.QueryDslRepository;
 import hello.itemservice.repository.springdatajpa.DataJpaRepository;
 import hello.itemservice.repository.springdatajpa.SpringDataJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+import javax.persistence.EntityManager;
+
+@Configuration
 @RequiredArgsConstructor
-public class SpringDataJpaConfig {
+public class QueryDslConfig {
 
-    private final SpringDataJpaRepository springDataJpaRepository;
+    private final EntityManager em;
 
-    //@Bean
-    public DataJpaRepository dataJpaRepository() {
-        return new DataJpaRepository(springDataJpaRepository);
+    @Bean
+    public QueryDslRepository queryDslRepository() {
+        return new QueryDslRepository(em);
     }
 
-    //@Bean
+    @Bean
     public MemberRepository memberRepository() {
-        return dataJpaRepository();
+        return queryDslRepository();
     }
 }

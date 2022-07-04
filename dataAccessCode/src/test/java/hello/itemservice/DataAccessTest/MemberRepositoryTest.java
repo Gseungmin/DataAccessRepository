@@ -1,4 +1,4 @@
-package hello.itemservice.JdbcTemplateTest;
+package hello.itemservice.DataAccessTest;
 
 import hello.itemservice.domain.Member;
 import hello.itemservice.repository.MemberRepository;
