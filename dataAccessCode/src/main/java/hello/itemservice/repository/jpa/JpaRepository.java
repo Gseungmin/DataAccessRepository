@@ -4,10 +4,12 @@ import hello.itemservice.domain.Member;
 import hello.itemservice.repository.MemberRepository;
 import hello.itemservice.repository.MemberSearchCond;
 import hello.itemservice.repository.MemberUpdateDto;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.List;

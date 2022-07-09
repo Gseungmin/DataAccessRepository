@@ -8,7 +8,9 @@ import hello.itemservice.domain.QMember;
 import hello.itemservice.repository.MemberRepository;
 import hello.itemservice.repository.MemberSearchCond;
 import hello.itemservice.repository.MemberUpdateDto;
+import hello.itemservice.repository.jpa.JpaRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -22,9 +24,9 @@ public class QueryDslRepository implements MemberRepository {
     private final EntityManager em;
     private final JPAQueryFactory queryFactory;
 
-    public QueryDslRepository(EntityManager em) {
+    public QueryDslRepository(EntityManager em, JPAQueryFactory jpaQueryFactory) {
         this.em = em;
-        this.queryFactory = new JPAQueryFactory(em);
+        this.queryFactory = jpaQueryFactory;
     }
 
     @Override
