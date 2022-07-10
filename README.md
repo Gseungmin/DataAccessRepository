@@ -43,4 +43,4 @@ Spring의 DB 접근 기술을 비교 분석하고 테스트하는 프로젝트�
 - 해당 프로젝트는 임베디드 DB 테스트 환경을 사용하므로 별도의 DB를 설치하지 않아도 테스트 환경을 실행할 수 있어요!
 - TEST해보고 싶은 DataAccess기술에 대해서는 Config설정 파일을 수정해줘야 해요! 아래 영상을 참조해주세요!
 - ![Validation 회원 가입_3](https://user-images.githubusercontent.com/87487149/178135263-dbf1ef3b-8b62-47cc-b238-eec440463b9d.gif)
-현재 AppCofig를 설정파일로 두었습니다! 따라서 Jdbc Template을 테스트해보기 위해서는 설정파일을 AppConfig에서 JdbcTemplateConfig로 바꿔줍니다! 그 후 테스트를 진행시키면 잘 진행되는 것을 볼 수 있습니다!😄
+- 현재 AppCofig를 설정파일로 두었습니다! 따라서 Jdbc Template을 테스트해보기 위해서는 설정파일을 AppConfig에서 JdbcTemplateConfig로 바꿔줍니다! 그 후 테스트를 진행시키면 잘 진행되는 것을 볼 수 있습니다!😄
